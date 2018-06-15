@@ -1,0 +1,23 @@
+spring:
+    activemq:
+        broker-url: tcp://192.168.100.3:61616
+        in-memory: true
+    activemq:
+        broker-url: tcp://192.168.100.3:61616
+        in-memory: true
+        #true表示使用连接池
+        pool:
+            enabled: true
+        #连接池最大连接数
+            max-connections: 5
+          #空闲的连接过期时间，默认为30秒
+            idle-timeout: 300000
+          #强制的连接过期时间，与idleTimeout的区别在于：idleTimeout是在连接空闲一段时间失效，
+          #而expiryTimeout不管当前连接的情况，只要达到指定时间就失效。默认为0，never
+            expiry-timeout: 0
+    jms:
+        pub-sub-domain: true
+#activemq主题activeMq:
+activeMq:
+    acs:
+        topicName: taskNodeLog
